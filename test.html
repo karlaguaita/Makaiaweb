@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        ul, li {
+            padding: 0;
+            margin: 0;
+            list-style: none inside;
+        }
+        ul.slider {
+            position:relative; /*Necesitamos que el ul sea relativo*/
+        }
+        ul.slider li {
+            opacity: 0; /*Ocultamos todos los <li>*/
+            transition: opacity .5s;
+            position: absolute; /*Posicionamos en absoluto los <li>*/
+            left: 0px;
+            top: 0px;
+            margin:50px;
+            padding:50px;
+            border:2px solid red;
+            background:#fff;
+        }
+        ul.slider li:first-child {
+            opacity: 1; /*Mostramos el primer <li>*/
+        }
+        ul.slider li:target {
+            opacity: 1; /*Mostramos el <li> al que apunta el enlace*/
+        }
+        nav {
+            position:relative;
+            margin-top: 240px;
+        }
+        body, html {
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            overflow:hidden;
+            height: auto;
+        }
+
+        ul, li {
+            box-sizing: border-box;
+        }
+
+        ul.slider {
+            padding: 30px;
+        }
+
+        ul.slider li {
+            width: 100vw;
+            height: 300px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background-color: gray;
+            opacity: 0; 
+            transition: opacity .5s;
+            padding-top: 30vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            font-size: calc( 1.5rem + 1vw );
+            text-align: center;
+        }
+
+        #slide1 {
+            background-color: #00324b;
+            color: #fff;
+        }
+
+        #slide2 {
+            background-color: #65bce8;
+            color: #00324b;
+        }
+
+        #slide3 {
+            background-color: #f90;
+            color: #00324b;
+        }
+
+        #slide4 {
+            background-color: #00324b;
+            color: #65bce8;
+        }
+
+        #slide5 {
+            background-color: #65bce8;
+            color: #00324b;
+        }
+
+        nav {
+            width: 100vw;
+            background: #f1f2f3;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            display: flex;
+            flex-grow: 1;
+            flex-wrap: wrap;
+            box-sizing: border:box;
+        }
+
+        nav a {
+            font-size: calc( 1.2rem + 1vw );
+            text-decoration: none;
+            font-weight: bold;
+            color: #00324b;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            flex-grow: 1;
+            text-align: center;
+            border-top: 5px solid #00324b;
+            border-right: 1px solid #00324b;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        nav li:last-child a {
+            border-right: 0;
+        }
+
+        nav a:hover {
+            background-color: #00324b;
+            color: #fff;
+            border-top-color: #65bce8;
+        }
+
+        nav a:active {
+            border-top-color: #f90;
+            background: #f90;
+            color: #00324b;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 60px; border-color: black; width: 100%; border-style: solid; border-width: 0px; border-bottom-width: 1px; display: flex;">
+        <div  style="margin-left: 20px; display: flex; align-items: center; flex: 1">
+            LOGO
+        </div>
+        <div style="display: flex; flex: 1; justify-content: flex-end; align-items: center;">
+            Menu 1
+        </div>
+        <div style="display: flex; flex: 1; justify-content: flex-end; align-items: center;">
+            Menu 2
+        </div>
+        <div style="display: flex; flex: 1; justify-content: flex-end; align-items: center;">
+            Menu 3
+        </div>
+        <div style="display: flex; flex: 1; justify-content: flex-end; align-items: center;">
+            Menu 4
+        </div>
+        <div style="display: flex; flex: 1; justify-content: flex-end; align-items: center;">
+            Menu 5 (No mas de 5)
+        </div>
+    </div>
+    <div style="height: 430px; border-color: black; width: 100%; border-style: solid; border-width: 0px; border-bottom-width: 1px; display: flex; flex-direction: column;">
+        <ul class="slider">
+            <li id="slide1">Slogan e imagen de proyecto 1</ li>
+            <li id="slide2">Slogan e imagen de proyecto 2</ li>
+            <li id="slide3">Slogan e imagen de proyecto 3</ li>
+            <li id="slide4">Slogan e imagen de proyecto 4</ li>
+            <li id="slide5">Slogan e imagen de proyecto 5</ li>
+         </ul>
+         <nav>
+            <ul class="menu">
+                <li><a href="#slide1">Proyecto 1<//a></ li>
+                <li><a href="#slide2">Proyecto 2<//a></ li>
+                <li><a href="#slide3">Proyecto 3<//a></ li>
+                <li><a href="#slide4">Proyecto 4<//a></ li>
+                <li><a href="#slide5">Proyecto 5<//a></ li>
+        </ul>
+        </nav>
+    </div>
+    <div style="height: 60px; border-color: black; width: 100%; border-style: solid; border-width: 0px; border-bottom-width: 1px; display: flex; justify-content: center; align-items: center;">
+        Buscador de proyectos. Usar un placeholder de letra mas grande y centrado para poder resaltar la seccion.
+    </div>
+    </body>
+</html>
